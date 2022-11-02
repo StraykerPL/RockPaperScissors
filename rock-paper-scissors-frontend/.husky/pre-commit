@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-cd rock-paper-scissors-frontend && npx prettier --write --ignore-unknown src/ && git add src/* && cd ..
+cd rock-paper-scissors-frontend && npm run prettier && git add src/* && cd ..

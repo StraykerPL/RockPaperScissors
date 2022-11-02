@@ -7,7 +7,8 @@
         "dev-build": "ng build --watch --configuration development",
         "prod-build": "ng build --watch --configuration production",
         "test": "ng test",
-        "prepare": "cd .. && husky install rock-paper-scissors-frontend/.husky"
+        "prepare-prettier": "cd .. && husky install rock-paper-scissors-frontend/.husky",
+        "prettier": "npx prettier --write --ignore-unknown src/"
     },
     "private": true,
     "dependencies": {
