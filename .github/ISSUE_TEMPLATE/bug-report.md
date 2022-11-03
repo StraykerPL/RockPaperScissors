@@ -1,9 +1,9 @@
 ---
-name: Bug report
+name: Bug Report
 about: Create a report to help us improve
 title: 'Bug: '
-labels: ''
-assignees: ''
+labels: bug
+assignees: StraykerPL
 
 ---
 
