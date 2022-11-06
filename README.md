@@ -52,7 +52,7 @@ Test Environment - [GitHub Pages](https://straykerpl.github.io/RockPaperScissors
 ## Author
 
 - Website - [Strayker Software](https://straykersoftware.pl)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/StraykerPL)
+- Frontend Mentor - [FrontendMentor/StraykerPL](https://www.frontendmentor.io/profile/StraykerPL)
 
 ## Licensing
 
