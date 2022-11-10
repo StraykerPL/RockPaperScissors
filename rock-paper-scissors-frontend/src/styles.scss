@@ -1,14 +1,14 @@
-@use './shared/styles/variables';
+@use "./shared/styles/variables";
 
 html {
-    height: variables.$pageHeightPercent;
+	height: variables.$pageHeightPercent;
 }
 
 body {
-    background-image: variables.$backgroundGradient;
-    background-repeat: no-repeat;
-    min-height: variables.$bodyMinHeight;
-    width: variables.$desktopWidth;
-    font-family: variables.$font;
-    font-weight: variables.$fontWeight;
+	background-image: variables.$backgroundGradient;
+	background-repeat: no-repeat;
+	min-height: variables.$bodyMinHeight;
+	width: variables.$desktopWidth;
+	font-family: variables.$font;
+	font-weight: variables.$fontWeight;
 }
