@@ -13,6 +13,9 @@ export class RulesButtonComponent implements OnInit {
 	ngOnInit() {}
 
 	rulesButtonClicked(): void {
-		this.dialog.open(RulesModalComponent);
+		this.dialog.open(RulesModalComponent, {
+			autoFocus: false,
+			restoreFocus: false,
+		});
 	}
 }
