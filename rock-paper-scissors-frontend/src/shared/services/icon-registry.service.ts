@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { IconRegistryData } from '../consts/IconRegistryData';
+import { IconRegistryObject } from '../models/IconRegistryObject';
 
 @Injectable({
 	providedIn: 'root',
@@ -11,12 +13,12 @@ export class IconRegistryService {
 		private sanitizer: DomSanitizer
 	) {}
 
-	addCloseIcon() {
-		this.iconRegistry.addSvgIcon(
-			'close-icon',
-			this.sanitizer.bypassSecurityTrustResourceUrl(
-				'../../assets/images/icon-close.svg'
-			)
-		);
+	performRegistration() {
+		IconRegistryData.forEach((element: IconRegistryObject) => {
+			this.iconRegistry.addSvgIcon(
+				element.iconName,
+				this.sanitizer.bypassSecurityTrustResourceUrl(element.iconPath)
+			);
+		});
 	}
 }

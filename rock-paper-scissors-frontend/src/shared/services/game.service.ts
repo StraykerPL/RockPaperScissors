@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PlayOption } from '../models/PlayOption.enum';
+import { PlayOption } from '../consts/PlayOption.enum';
 
 @Injectable({
 	providedIn: 'root',

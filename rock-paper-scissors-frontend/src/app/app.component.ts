@@ -10,6 +10,6 @@ export class AppComponent {
 	title = 'rock-paper-scissors-frontend';
 
 	constructor(private iconRegistry: IconRegistryService) {
-		this.iconRegistry.addCloseIcon();
+		this.iconRegistry.performRegistration();
 	}
 }
