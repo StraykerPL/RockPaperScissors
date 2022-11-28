@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { RulesModalComponent } from 'src/shared/components/rules-modal/rules-modal.component';
+import { RulesModalComponent } from 'src/app/components/rules-modal/rules-modal.component';
 
 @Component({
 	selector: 'app-rules-button',
