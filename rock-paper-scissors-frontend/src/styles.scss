@@ -1,4 +1,4 @@
-@use "./shared/styles/variables";
+@use "variables";
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
@@ -50,5 +50,5 @@ body {
 	min-height: variables.$bodyMinHeight;
 	width: variables.$desktopWidth;
 	font-family: variables.$font;
-	font-weight: variables.$fontWeight;
+	font-weight: variables.$defaultFontWeight;
 }
