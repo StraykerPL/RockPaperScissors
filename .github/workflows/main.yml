@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: All things angular
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@1.3.2
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           angular_project_dir: ./rock-paper-scissors-frontend
           angular_dist_build_folder: dist/rock-paper-scissors-frontend
