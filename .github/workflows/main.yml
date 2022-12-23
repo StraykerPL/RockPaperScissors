@@ -1,15 +1,15 @@
-name: Build and Deploy
+name: Deploy Remote Environment
 on:
-  pull_request:
+  push:
     branches:
       - main
 jobs:
   build:
-    name: Deploy on Ubuntu
+    name: Deploy GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: All things angular
+      - name: Angular Production Build
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           angular_project_dir: ./rock-paper-scissors-frontend
