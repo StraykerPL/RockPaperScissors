@@ -17,4 +17,4 @@ jobs:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
           build_configuration: production
           base_href: https://straykerpl.github.io/RockPaperScissors/
-          deploy_branch: main
+          deploy_branch: environment
