@@ -14,6 +14,7 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [Getting Started](#getting-started)
   - [Process Description](#process-description)
     - [Environments](#environments)
+    - [Deployment](#deployment)
     - [Commits and Branching](#commits-and-branching)
     - [File Structure](#file-structure)
     - [Backlog](#backlog)
@@ -71,6 +72,10 @@ Test Environment - [GitHub Pages](https://straykerpl.github.io/RockPaperScissors
 In project, there are two programming environments - `development` and `production`. The first one has disabled some of compiler's features, like automatic optimisations and licenses extraction. The secend one has all compiler's features enabled. For test environment deployments `production` is used.
 
 Test environment is hosted on GitHub Pages.
+
+#### Deployment
+
+To deploy changes on test environment, PR must be created to merge `develop` into `main`. After successful push, changes will be visible on `environment` branch. GitHub Pages should refresh instantly, but sometimes it can take 5-10 minutes to proceed request.
 
 #### Commits and Branching
 
