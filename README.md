@@ -94,7 +94,7 @@ The flow of tasks is as follow:
 - Task is moved to `In Test` when `develop` is merged to `main` via PR,
 - Task is moved to `Done` when testing did not find any bugs,
 
-This config of workflow as designed to fit into small time for development and to fit in GitHub Free subscription.
+This config of workflow is designed to fit into small time of development and to fit in GitHub Free subscription.
 
 ## Author
 
