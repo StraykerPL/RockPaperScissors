@@ -10,9 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RulesButtonComponent } from './components/rules-button/rules-button.component';
 import { RulesModalComponent } from 'src/app/components/rules-modal/rules-modal.component';
+import { GameService } from 'src/shared/services/game.service';
+import { ScoreBoxComponent } from './components/score-box/score-box.component';
 
 @NgModule({
-	declarations: [AppComponent, RulesButtonComponent, RulesModalComponent],
+	declarations: [
+		AppComponent,
+		RulesButtonComponent,
+		RulesModalComponent,
+		ScoreBoxComponent,
+	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -22,7 +29,7 @@ import { RulesModalComponent } from 'src/app/components/rules-modal/rules-modal.
 		MatIconModule,
 		HttpClientModule,
 	],
-	providers: [],
+	providers: [GameService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
