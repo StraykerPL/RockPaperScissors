@@ -1,13 +1,13 @@
 @use "variables";
 
 .header {
-	width: 600px;
-	height: 100px;
+	width: 37.5rem;
+	height: 6.25rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	padding: 1.25rem;
 	border: 1px solid variables.$boxBorderColor;
 	border-radius: 15px;
 
@@ -16,7 +16,7 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		width: 200px;
-		height: 100px;
+		width: 12.5rem;
+		height: 6.25rem;
 	}
 }
