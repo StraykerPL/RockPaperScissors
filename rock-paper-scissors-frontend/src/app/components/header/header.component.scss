@@ -1,0 +1,22 @@
+@use "variables";
+
+.header {
+	width: 600px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	border: 1px solid variables.$boxBorderColor;
+	border-radius: 15px;
+
+	&__logo {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 200px;
+		height: 100px;
+	}
+}

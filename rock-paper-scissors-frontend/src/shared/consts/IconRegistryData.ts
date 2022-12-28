@@ -9,4 +9,8 @@ export const IconRegistryData: Array<IconRegistryObject> = [
 		iconName: 'rules-diag',
 		iconPath: 'assets/images/image-rules.svg',
 	},
+	{
+		iconName: 'header-icon',
+		iconPath: 'assets/images/logo.svg',
+	},
 ];

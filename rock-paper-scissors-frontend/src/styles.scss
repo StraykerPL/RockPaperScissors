@@ -48,8 +48,8 @@ body {
 	background-image: variables.$backgroundGradient;
 	background-repeat: no-repeat;
 	min-height: variables.$bodyMinHeight;
-	width: variables.$desktopWidth;
 	font-family: variables.$font;
 	font-weight: variables.$defaultFontWeight;
 	color: variables.$defaultFontColor;
+	margin: 0;
 }
