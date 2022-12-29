@@ -6,6 +6,7 @@ import { SharedModule } from 'src/shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 
 import { GameService } from 'src/shared/services/game.service';
 
@@ -16,6 +17,7 @@ import { ScoreBoxComponent } from './components/score-box/score-box.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayOptionComponent } from './components/play-option/play-option.component';
 import { PlayAreaComponent } from './components/play-area/play-area.component';
+import { PlayAgainButtonComponent } from './components/play-again-button/play-again-button.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +28,7 @@ import { PlayAreaComponent } from './components/play-area/play-area.component';
 		HeaderComponent,
 		PlayOptionComponent,
 		PlayAreaComponent,
+		PlayAgainButtonComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -35,6 +38,7 @@ import { PlayAreaComponent } from './components/play-area/play-area.component';
 		MatDialogModule,
 		MatIconModule,
 		HttpClientModule,
+		MatButtonModule,
 	],
 	providers: [GameService],
 	bootstrap: [AppComponent],
