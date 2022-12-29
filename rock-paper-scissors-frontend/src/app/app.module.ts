@@ -15,6 +15,7 @@ import { RulesModalComponent } from 'src/app/components/rules-modal/rules-modal.
 import { ScoreBoxComponent } from './components/score-box/score-box.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayOptionComponent } from './components/play-option/play-option.component';
+import { PlayAreaComponent } from './components/play-area/play-area.component';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { PlayOptionComponent } from './components/play-option/play-option.compon
 		ScoreBoxComponent,
 		HeaderComponent,
 		PlayOptionComponent,
+		PlayAreaComponent,
 	],
 	imports: [
 		BrowserModule,

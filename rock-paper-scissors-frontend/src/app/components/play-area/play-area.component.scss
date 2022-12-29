@@ -1,0 +1,15 @@
+$backgroundIcon: url("/assets/images/bg-triangle.svg");
+
+.play-area {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	column-gap: 5rem;
+	row-gap: 2.5rem;
+	width: 37.5rem;
+	background-image: $backgroundIcon;
+	background-repeat: no-repeat;
+	background-position: center;
+}
