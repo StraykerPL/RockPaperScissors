@@ -13,4 +13,16 @@ export const IconRegistryData: Array<IconRegistryObject> = [
 		iconName: 'header-icon',
 		iconPath: 'assets/images/logo.svg',
 	},
+	{
+		iconName: 'rock-icon',
+		iconPath: 'assets/images/icon-rock.svg',
+	},
+	{
+		iconName: 'paper-icon',
+		iconPath: 'assets/images/icon-paper.svg',
+	},
+	{
+		iconName: 'scissors-icon',
+		iconPath: 'assets/images/icon-scissors.svg',
+	},
 ];
