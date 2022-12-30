@@ -1,4 +1,11 @@
-<main>
-	Score You Picked The House Picked You Win You Lose Play Again
-	<app-rules-button></app-rules-button>
+<main class="main-container">
+	<section class="main-container__play-area">
+		<app-header></app-header>
+		You Picked The House Picked You Win You Lose
+		<app-play-area></app-play-area>
+		<app-play-again-button [gameState]="gameState"></app-play-again-button>
+	</section>
+	<footer class="main-container__footer">
+		<app-rules-button></app-rules-button>
+	</footer>
 </main>
