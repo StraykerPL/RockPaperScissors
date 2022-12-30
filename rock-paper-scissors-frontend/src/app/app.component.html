@@ -2,7 +2,7 @@
 	<section class="main-container__play-area">
 		<app-header></app-header>
 		You Picked The House Picked You Win You Lose
-		<app-play-area></app-play-area>
+		<app-play-area *ngIf="!areDecisionsMade"></app-play-area>
 		<app-play-again-button [gameState]="gameState"></app-play-again-button>
 	</section>
 	<footer class="main-container__footer">
