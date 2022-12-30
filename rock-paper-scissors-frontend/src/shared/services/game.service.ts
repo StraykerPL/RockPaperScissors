@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { GameState } from '../consts/GameState.enum';
 import { PlayOption } from '../consts/PlayOption.enum';
 
 @Injectable({
@@ -24,23 +25,23 @@ export class GameService {
 		this.aiOption = choosenValue as PlayOption;
 	}
 
-	public isVictory(): boolean {
+	public isVictory(): GameState {
 		if (this.aiOption == PlayOption.scissors) {
 			if (this.playerOption == PlayOption.paper) {
-				return false;
+				return GameState.lose;
 			}
 		} else if (this.aiOption == PlayOption.paper) {
 			if (this.playerOption == PlayOption.rock) {
-				return false;
+				return GameState.lose;
 			}
 		} else if (this.aiOption == PlayOption.rock) {
 			if (this.playerOption == PlayOption.scissors) {
-				return false;
+				return GameState.lose;
 			}
 		}
 
 		this.victoriesCount++;
-		return true;
+		return GameState.victory;
 	}
 
 	public restartGame(): void {}

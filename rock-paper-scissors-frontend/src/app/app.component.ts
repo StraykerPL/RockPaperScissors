@@ -17,11 +17,6 @@ export class AppComponent {
 		private gameService: GameService
 	) {
 		this.iconRegistry.performRegistration();
-
-		if (this.gameService.isVictory()) {
-			this.gameState = GameState.victory;
-		} else {
-			this.gameState = GameState.lose;
-		}
+		this.gameState = this.gameService.isVictory();
 	}
 }
