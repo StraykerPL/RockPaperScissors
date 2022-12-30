@@ -6,20 +6,20 @@ import { PlayOption } from '../consts/PlayOption.enum';
 	providedIn: 'root',
 })
 export class GameService {
-	private playerOption: PlayOption;
-	private aiOption: PlayOption;
+	private playerOption: PlayOption = PlayOption.paper;
+	private aiOption: PlayOption = PlayOption.paper;
 	public victoriesCount: number = 0;
+	public displayResults: boolean = false;
 
-	constructor() {
-		this.playerOption = PlayOption.paper;
-		this.aiOption = PlayOption.paper;
-	}
+	constructor() {}
 
-	public play(option: PlayOption): void {
+	public play(option: PlayOption) {
 		this.playerOption = option;
+
+		this.setAiOption();
 	}
 
-	public setAiOption(): void {
+	public setAiOption() {
 		const optionStrings = Object.values(PlayOption);
 		const choosenValue = optionStrings[Math.random() * 3];
 		this.aiOption = choosenValue as PlayOption;
@@ -44,5 +44,9 @@ export class GameService {
 		return GameState.victory;
 	}
 
-	public restartGame(): void {}
+	public restartGame() {
+		this.playerOption = PlayOption.paper;
+		this.aiOption = PlayOption.paper;
+		this.displayResults = false;
+	}
 }

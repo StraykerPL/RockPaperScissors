@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PlayOption } from 'src/shared/consts/PlayOption.enum';
+import { GameService } from 'src/shared/services/game.service';
 
 @Component({
 	selector: 'app-play-option',
@@ -6,24 +8,29 @@ import { Component, Input, OnInit } from '@angular/core';
 	styleUrls: ['./play-option.component.scss'],
 })
 export class PlayOptionComponent implements OnInit {
-	@Input() optionName: string = '';
+	@Input() option: PlayOption = PlayOption.undefined;
 	private baseClassName: string = 'play-option';
 	classNames: string = '';
 	iconName: string = '';
 
-	constructor() {}
+	constructor(private gameService: GameService) {}
 
 	ngOnInit() {
 		this.classNames = this.baseClassName;
 
-		if (this.optionName !== '') {
-			this.iconName = this.optionName + '-icon';
+		if (this.option !== PlayOption.undefined) {
+			const optionNames = Object.values(PlayOption);
+			this.iconName = optionNames[this.option] + '-icon';
 			this.classNames =
 				this.baseClassName +
 				' ' +
 				this.baseClassName +
 				'--' +
-				this.optionName;
+				optionNames[this.option];
 		}
+	}
+
+	optionClickHandler() {
+		this.gameService.play(this.option);
 	}
 }
