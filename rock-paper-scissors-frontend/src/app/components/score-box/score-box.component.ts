@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { GameService } from 'src/shared/services/game.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-score-box',
@@ -7,11 +6,9 @@ import { GameService } from 'src/shared/services/game.service';
 	styleUrls: ['./score-box.component.scss'],
 })
 export class ScoreBoxComponent implements OnInit {
-	score = '';
+	@Input() score: number = 0;
 
-	constructor(private gameService: GameService) {
-		this.score = gameService.victoriesCount.toString();
-	}
+	constructor() {}
 
 	ngOnInit() {}
 }

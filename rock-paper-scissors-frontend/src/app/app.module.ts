@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from 'src/shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,7 +33,6 @@ import { PlayAgainButtonComponent } from './components/play-again-button/play-ag
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		SharedModule,
 		MatDialogModule,
 		MatIconModule,
 		HttpClientModule,

@@ -30,7 +30,5 @@ export class PlayOptionComponent implements OnInit {
 		}
 	}
 
-	optionClickHandler() {
-		this.gameService.play(this.option);
-	}
+	optionClickHandler() {}
 }
