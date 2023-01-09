@@ -10,15 +10,9 @@ import { IconRegistryService } from 'src/shared/services/icon-registry.service';
 })
 export class AppComponent {
 	title = 'rock-paper-scissors-frontend';
-	gameState: GameState = GameState.undefined;
-	areDecisionsMade: boolean = false;
+	gameState = GameState.undefined;
 
-	constructor(
-		private iconRegistry: IconRegistryService,
-		private gameService: GameService
-	) {
+	constructor(private iconRegistry: IconRegistryService) {
 		this.iconRegistry.performRegistration();
-		this.gameState = this.gameService.isVictory();
-		this.areDecisionsMade = this.gameService.displayResults;
 	}
 }

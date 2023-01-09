@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayOption } from 'src/shared/consts/PlayOption.enum';
-import { GameService } from 'src/shared/services/game.service';
 
 @Component({
 	selector: 'app-play-area',
@@ -12,7 +11,7 @@ export class PlayAreaComponent implements OnInit {
 	paperPlayOption: PlayOption = PlayOption.paper;
 	scissorsPlayOption: PlayOption = PlayOption.scissors;
 
-	constructor(private gameService: GameService) {}
+	constructor() {}
 
 	ngOnInit() {}
 }
