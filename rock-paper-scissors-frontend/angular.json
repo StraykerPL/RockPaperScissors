@@ -31,7 +31,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/shared/styles"
+                "src/shared/styles",
+                "src/assets/images"
               ]
             },
             "scripts": []

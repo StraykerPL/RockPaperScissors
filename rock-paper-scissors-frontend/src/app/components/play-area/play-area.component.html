@@ -1,5 +1,20 @@
 <div class="play-area">
-	<app-play-option [option]="paperPlayOption"></app-play-option>
-	<app-play-option [option]="scissorsPlayOption"></app-play-option>
-	<app-play-option [option]="rockPlayOption"></app-play-option>
+	<div class="play-area__start">
+		<app-play-option
+			[option]="paperPlayOption"
+			(selected)="playerChoose($event)"></app-play-option>
+		<app-play-option
+			[option]="scissorsPlayOption"
+			(selected)="playerChoose($event)"></app-play-option>
+		<app-play-option
+			[option]="rockPlayOption"
+			(selected)="playerChoose($event)"></app-play-option>
+	</div>
+	<div class="play-area__show-choices" *ngIf="showChoices">
+		YOU PICKED THE HOUSE PICKED
+	</div>
+	<div class="play-area__show-results" *ngIf="showResults">
+		YOU WIN YOU LOSE
+		<app-play-again-button></app-play-again-button>
+	</div>
 </div>

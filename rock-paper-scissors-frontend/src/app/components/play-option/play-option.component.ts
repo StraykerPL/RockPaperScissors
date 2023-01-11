@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PlayOption } from 'src/shared/consts/PlayOption.enum';
 import { GameService } from 'src/shared/services/game.service';
 
@@ -12,6 +12,8 @@ export class PlayOptionComponent implements OnInit {
 	private baseClassName: string = 'play-option';
 	classNames: string = '';
 	iconName: string = '';
+	@Output() selected: EventEmitter<PlayOption> =
+		new EventEmitter<PlayOption>();
 
 	constructor(private gameService: GameService) {}
 
@@ -30,5 +32,7 @@ export class PlayOptionComponent implements OnInit {
 		}
 	}
 
-	optionClickHandler() {}
+	optionClickHandler() {
+		this.selected.emit(this.option);
+	}
 }
