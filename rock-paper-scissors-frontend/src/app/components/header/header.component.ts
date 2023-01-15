@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GameService } from 'src/shared/services/game.service';
 
 @Component({
@@ -7,13 +6,19 @@ import { GameService } from 'src/shared/services/game.service';
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 	public counterValue: number = 0;
-	private handler: Subscription = this.gameService.addNewVictory.subscribe(
-		(newVictoriesCount: number) => (this.counterValue = newVictoriesCount)
-	);
 
-	constructor(private gameService: GameService) {}
+	constructor(private gameService: GameService) {
+		this.gameService.newVictory.subscribe(
+			(newVictoriesCount: number) =>
+				(this.counterValue = newVictoriesCount)
+		);
+	}
 
 	ngOnInit() {}
+
+	ngOnDestroy() {
+		this.gameService.newVictory.unsubscribe();
+	}
 }

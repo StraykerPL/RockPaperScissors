@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GameState } from 'src/shared/consts/GameState.enum';
 import { IconRegistryService } from 'src/shared/services/icon-registry.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { IconRegistryService } from 'src/shared/services/icon-registry.service';
 })
 export class AppComponent {
 	title = 'rock-paper-scissors-frontend';
-	gameState = GameState.undefined;
 
 	constructor(private iconRegistry: IconRegistryService) {
 		this.iconRegistry.performRegistration();

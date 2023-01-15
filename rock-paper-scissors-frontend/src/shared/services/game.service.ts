@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { GameState } from '../consts/GameState.enum';
 import { PlayOption } from '../consts/PlayOption.enum';
 
@@ -6,8 +7,7 @@ import { PlayOption } from '../consts/PlayOption.enum';
 	providedIn: 'root',
 })
 export class GameService {
-	public victoriesCount: number = 0;
-	public addNewVictory: EventEmitter<number> = new EventEmitter<number>();
+	public newVictory: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
 	constructor() {}
 

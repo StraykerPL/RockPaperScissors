@@ -11,15 +11,24 @@
 			(selected)="gameStart($event)"></app-play-option>
 	</div>
 	<div class="play-area__final" *ngIf="showChoices">
-		<!-- *ngIf="showChoices && !showResults" -->
 		<div class="play-area__final-choice play-area__final-choice-player">
 			<div>YOU PICKED</div>
 			<app-play-option [option]="playerChoice"></app-play-option>
 		</div>
 		<div class="play-area__final-results" *ngIf="showResults">
-			YOU WIN YOU LOSE
+			<p
+				class="play-area__final-results-header"
+				*ngIf="state === victoryState">
+				YOU WIN
+			</p>
+			<p
+				class="play-area__final-results-header"
+				*ngIf="state !== victoryState">
+				YOU LOSE
+			</p>
 			<app-play-again-button
-				(clicked)="restartGame()"></app-play-again-button>
+				(clicked)="restartGame()"
+				[gameState]="state"></app-play-again-button>
 		</div>
 		<div class="play-area__final-choice play-area__final-choice-ai">
 			<div>THE HOUSE PICKED</div>

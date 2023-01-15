@@ -14,6 +14,7 @@ export class PlayAreaComponent implements OnInit {
 	scissorsPlayOption: PlayOption = PlayOption.scissors;
 	undefinedPlayOption: PlayOption = PlayOption.undefined;
 	state: GameState = GameState.undefined;
+	victoryState: GameState = GameState.victory;
 
 	playerChoice: PlayOption = PlayOption.undefined;
 	aiChoice: PlayOption = PlayOption.undefined;
@@ -40,8 +41,8 @@ export class PlayAreaComponent implements OnInit {
 		this.showResults = true;
 
 		if (this.state === GameState.victory) {
-			this.gameService.addNewVictory.emit(
-				this.gameService.victoriesCount++
+			this.gameService.newVictory.next(
+				this.gameService.newVictory.getValue() + 1
 			);
 		}
 	}
