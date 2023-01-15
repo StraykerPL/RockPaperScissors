@@ -12,8 +12,10 @@
 	</div>
 	<div class="play-area__final" *ngIf="showChoices">
 		<div class="play-area__final-choice play-area__final-choice-player">
-			<div>YOU PICKED</div>
-			<app-play-option [option]="playerChoice"></app-play-option>
+			<div class="play-area__final-choice-text">YOU PICKED</div>
+			<app-play-option
+				[option]="playerChoice"
+				[isBig]="isBig"></app-play-option>
 		</div>
 		<div class="play-area__final-results" *ngIf="showResults">
 			<p
@@ -31,12 +33,13 @@
 				[gameState]="state"></app-play-again-button>
 		</div>
 		<div class="play-area__final-choice play-area__final-choice-ai">
-			<div>THE HOUSE PICKED</div>
+			<div class="play-area__final-choice-text">THE HOUSE PICKED</div>
 			<div
 				class="play-area__final-choice-ai-blank-space"
 				*ngIf="aiChoice === undefinedPlayOption"></div>
 			<app-play-option
 				[option]="aiChoice"
+				[isBig]="isBig"
 				*ngIf="aiChoice !== undefinedPlayOption"></app-play-option>
 		</div>
 	</div>

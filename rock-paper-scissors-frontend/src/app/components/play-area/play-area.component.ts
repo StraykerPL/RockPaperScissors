@@ -19,6 +19,7 @@ export class PlayAreaComponent implements OnInit {
 	playerChoice: PlayOption = PlayOption.undefined;
 	aiChoice: PlayOption = PlayOption.undefined;
 
+	isBig: boolean = true;
 	showChoices: boolean = false;
 	showResults: boolean = false;
 
