@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { GameService } from 'src/shared/services/game.service';
 
 @Component({
@@ -8,10 +9,11 @@ import { GameService } from 'src/shared/services/game.service';
 })
 export class HeaderComponent implements OnInit {
 	public counterValue: number = 0;
+	private handler: Subscription = this.gameService.addNewVictory.subscribe(
+		(newVictoriesCount: number) => (this.counterValue = newVictoriesCount)
+	);
 
-	constructor(private gameService: GameService) {
-		this.counterValue = this.gameService.victoriesCount;
-	}
+	constructor(private gameService: GameService) {}
 
 	ngOnInit() {}
 }

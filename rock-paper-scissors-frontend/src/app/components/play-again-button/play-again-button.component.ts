@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameState } from 'src/shared/consts/GameState.enum';
 
 @Component({
@@ -10,6 +10,7 @@ export class PlayAgainButtonComponent implements OnInit {
 	private baseClassName: string = 'play-again-button';
 	@Input() gameState: GameState = GameState.undefined;
 	classNames: string = this.baseClassName;
+	@Output() clicked: EventEmitter<any> = new EventEmitter();
 
 	constructor() {}
 
@@ -21,5 +22,9 @@ export class PlayAgainButtonComponent implements OnInit {
 				this.classNames += ' ' + this.baseClassName + '--lose';
 			}
 		}
+	}
+
+	buttonClickHandle() {
+		this.clicked.emit();
 	}
 }

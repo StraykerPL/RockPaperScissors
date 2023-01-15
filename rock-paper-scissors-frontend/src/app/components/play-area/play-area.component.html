@@ -1,20 +1,34 @@
 <div class="play-area">
-	<div class="play-area__start">
+	<div class="play-area__start" *ngIf="!showChoices && !showResults">
 		<app-play-option
 			[option]="paperPlayOption"
-			(selected)="playerChoose($event)"></app-play-option>
+			(selected)="gameStart($event)"></app-play-option>
 		<app-play-option
 			[option]="scissorsPlayOption"
-			(selected)="playerChoose($event)"></app-play-option>
+			(selected)="gameStart($event)"></app-play-option>
 		<app-play-option
 			[option]="rockPlayOption"
-			(selected)="playerChoose($event)"></app-play-option>
+			(selected)="gameStart($event)"></app-play-option>
 	</div>
-	<div class="play-area__show-choices" *ngIf="showChoices">
-		YOU PICKED THE HOUSE PICKED
-	</div>
-	<div class="play-area__show-results" *ngIf="showResults">
-		YOU WIN YOU LOSE
-		<app-play-again-button></app-play-again-button>
+	<div class="play-area__final" *ngIf="showChoices">
+		<!-- *ngIf="showChoices && !showResults" -->
+		<div class="play-area__final-choice play-area__final-choice-player">
+			<div>YOU PICKED</div>
+			<app-play-option [option]="playerChoice"></app-play-option>
+		</div>
+		<div class="play-area__final-results" *ngIf="showResults">
+			YOU WIN YOU LOSE
+			<app-play-again-button
+				(clicked)="restartGame()"></app-play-again-button>
+		</div>
+		<div class="play-area__final-choice play-area__final-choice-ai">
+			<div>THE HOUSE PICKED</div>
+			<div
+				class="play-area__final-choice-ai-blank-space"
+				*ngIf="aiChoice === undefinedPlayOption"></div>
+			<app-play-option
+				[option]="aiChoice"
+				*ngIf="aiChoice !== undefinedPlayOption"></app-play-option>
+		</div>
 	</div>
 </div>

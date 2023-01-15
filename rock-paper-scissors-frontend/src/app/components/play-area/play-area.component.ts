@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameState } from 'src/shared/consts/GameState.enum';
 import { PlayOption } from 'src/shared/consts/PlayOption.enum';
+import { GameService } from 'src/shared/services/game.service';
 
 @Component({
 	selector: 'app-play-area',
@@ -11,6 +12,7 @@ export class PlayAreaComponent implements OnInit {
 	rockPlayOption: PlayOption = PlayOption.rock;
 	paperPlayOption: PlayOption = PlayOption.paper;
 	scissorsPlayOption: PlayOption = PlayOption.scissors;
+	undefinedPlayOption: PlayOption = PlayOption.undefined;
 	state: GameState = GameState.undefined;
 
 	playerChoice: PlayOption = PlayOption.undefined;
@@ -19,12 +21,36 @@ export class PlayAreaComponent implements OnInit {
 	showChoices: boolean = false;
 	showResults: boolean = false;
 
-	constructor() {}
+	constructor(private gameService: GameService) {}
 
 	ngOnInit() {}
 
-	playerChoose(value: PlayOption) {
+	async gameStart(value: PlayOption) {
 		this.playerChoice = value;
 		this.showChoices = true;
+
+		await this.gameService.sleep(3000);
+		this.aiChoice = this.gameService.setAiOption();
+
+		await this.gameService.sleep(3000);
+		this.state = this.gameService.isVictory(
+			this.playerChoice,
+			this.aiChoice
+		);
+		this.showResults = true;
+
+		if (this.state === GameState.victory) {
+			this.gameService.addNewVictory.emit(
+				this.gameService.victoriesCount++
+			);
+		}
+	}
+
+	restartGame() {
+		this.state = GameState.undefined;
+		this.playerChoice = PlayOption.undefined;
+		this.aiChoice = PlayOption.undefined;
+		this.showChoices = false;
+		this.showResults = false;
 	}
 }

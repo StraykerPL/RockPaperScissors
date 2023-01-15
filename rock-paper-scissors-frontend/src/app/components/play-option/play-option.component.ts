@@ -15,7 +15,7 @@ export class PlayOptionComponent implements OnInit {
 	@Output() selected: EventEmitter<PlayOption> =
 		new EventEmitter<PlayOption>();
 
-	constructor(private gameService: GameService) {}
+	constructor() {}
 
 	ngOnInit() {
 		this.classNames = this.baseClassName;
