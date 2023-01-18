@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { GameState } from '../consts/GameState.enum';
 import { PlayOption } from '../consts/PlayOption.enum';
 
@@ -6,14 +7,19 @@ import { PlayOption } from '../consts/PlayOption.enum';
 	providedIn: 'root',
 })
 export class GameService {
-	public victoriesCount: number = 0;
+	public newVictory: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
 	constructor() {}
 
+	public async sleep(miliseconds: number) {
+		await new Promise((r) => setTimeout(r, miliseconds));
+	}
+
 	public setAiOption() {
 		const optionStrings = Object.values(PlayOption);
-		const choosenValue = optionStrings[Math.random() * 3];
-		return choosenValue as PlayOption;
+		optionStrings.shift(); // Removing "undefined" value,
+		const choosenValue = optionStrings[Math.floor(Math.random() * 3)];
+		return PlayOption[choosenValue as keyof typeof PlayOption];
 	}
 
 	public isVictory(

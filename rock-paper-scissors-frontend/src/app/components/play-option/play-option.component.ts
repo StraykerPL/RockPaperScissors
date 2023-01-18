@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PlayOption } from 'src/shared/consts/PlayOption.enum';
-import { GameService } from 'src/shared/services/game.service';
 
 @Component({
 	selector: 'app-play-option',
@@ -8,12 +7,17 @@ import { GameService } from 'src/shared/services/game.service';
 	styleUrls: ['./play-option.component.scss'],
 })
 export class PlayOptionComponent implements OnInit {
-	@Input() option: PlayOption = PlayOption.undefined;
 	private baseClassName: string = 'play-option';
+
+	@Input() option: PlayOption = PlayOption.undefined;
+	@Input() isBig: boolean = false;
+	@Output() selected: EventEmitter<PlayOption> =
+		new EventEmitter<PlayOption>();
+
 	classNames: string = '';
 	iconName: string = '';
 
-	constructor(private gameService: GameService) {}
+	constructor() {}
 
 	ngOnInit() {
 		this.classNames = this.baseClassName;
@@ -28,7 +32,13 @@ export class PlayOptionComponent implements OnInit {
 				'--' +
 				optionNames[this.option];
 		}
+
+		if (this.isBig) {
+			this.classNames += ' ' + this.baseClassName + '--big';
+		}
 	}
 
-	optionClickHandler() {}
+	optionClickHandler() {
+		this.selected.emit(this.option);
+	}
 }
