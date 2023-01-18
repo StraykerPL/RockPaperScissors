@@ -7,7 +7,6 @@ $backgroundIcon: url("/assets/images/bg-triangle.svg");
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	width: 37.5rem;
 
 	&__start {
 		display: flex;
@@ -17,6 +16,7 @@ $backgroundIcon: url("/assets/images/bg-triangle.svg");
 		align-items: center;
 		column-gap: 5rem;
 		row-gap: 2.5rem;
+		width: 37.5rem;
 		background-image: $backgroundIcon;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -31,7 +31,6 @@ $backgroundIcon: url("/assets/images/bg-triangle.svg");
 		color: variables.$defaultFontColor;
 		font-family: inherit;
 		font-weight: variables.$defaultFontWeight;
-		width: fit-content;
 
 		&-choice {
 			display: flex;
@@ -40,7 +39,7 @@ $backgroundIcon: url("/assets/images/bg-triangle.svg");
 			row-gap: 100px;
 
 			&-text {
-				font-size: 25px;
+				font-size: 20px;
 				white-space: nowrap;
 			}
 
