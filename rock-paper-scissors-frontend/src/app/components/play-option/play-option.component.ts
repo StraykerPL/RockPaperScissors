@@ -7,13 +7,15 @@ import { PlayOption } from 'src/shared/consts/PlayOption.enum';
 	styleUrls: ['./play-option.component.scss'],
 })
 export class PlayOptionComponent implements OnInit {
+	private baseClassName: string = 'play-option';
+
 	@Input() option: PlayOption = PlayOption.undefined;
 	@Input() isBig: boolean = false;
-	private baseClassName: string = 'play-option';
-	classNames: string = '';
-	iconName: string = '';
 	@Output() selected: EventEmitter<PlayOption> =
 		new EventEmitter<PlayOption>();
+
+	classNames: string = '';
+	iconName: string = '';
 
 	constructor() {}
 

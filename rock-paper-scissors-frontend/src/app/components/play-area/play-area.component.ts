@@ -13,12 +13,12 @@ export class PlayAreaComponent implements OnInit {
 	paperPlayOption: PlayOption = PlayOption.paper;
 	scissorsPlayOption: PlayOption = PlayOption.scissors;
 	undefinedPlayOption: PlayOption = PlayOption.undefined;
-	state: GameState = GameState.undefined;
-	victoryState: GameState = GameState.victory;
 
 	playerChoice: PlayOption = PlayOption.undefined;
 	aiChoice: PlayOption = PlayOption.undefined;
 
+	state: GameState = GameState.undefined;
+	victoryState: GameState = GameState.victory;
 	isBig: boolean = true;
 	showChoices: boolean = false;
 	showResults: boolean = false;

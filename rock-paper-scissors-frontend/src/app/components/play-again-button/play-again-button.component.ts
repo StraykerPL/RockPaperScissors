@@ -8,9 +8,11 @@ import { GameState } from 'src/shared/consts/GameState.enum';
 })
 export class PlayAgainButtonComponent implements OnInit {
 	private baseClassName: string = 'play-again-button';
+
 	@Input() gameState: GameState = GameState.undefined;
-	classNames: string = this.baseClassName;
 	@Output() clicked: EventEmitter<any> = new EventEmitter();
+
+	classNames: string = this.baseClassName;
 
 	constructor() {}
 
