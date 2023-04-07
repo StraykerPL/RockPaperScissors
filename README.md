@@ -103,7 +103,7 @@ This config of workflow is designed to fit into small time of development and to
 
 ## Author
 
-- Website - [Strayker Software](https://straykersoftware.pl)
+- Website - [Daniel "Strayker" Nowak](https://straykerpl.github.io)
 - Frontend Mentor - [FrontendMentor/StraykerPL](https://www.frontendmentor.io/profile/StraykerPL)
 
 ## Licensing
