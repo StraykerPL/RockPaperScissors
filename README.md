@@ -108,4 +108,4 @@ This config of workflow is designed to fit into small time of development and to
 
 ## Licensing
 
-This project is licensed under MIT license, but I don't own files from Frontend Mentor. Please refer to [Frontend Mentor](https://www.frontendmentor.io) for licensing terms for this files.
+This project is licensed under MIT license, but I don't own files from Frontend Mentor. Please refer to [Frontend Mentor](https://www.frontendmentor.io/license) for licensing terms for this files.
