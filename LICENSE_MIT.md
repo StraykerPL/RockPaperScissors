@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2022 Daniel Strayker Nowak
+Copyright (c) 2022-actual Daniel Strayker Nowak
+All right reserved
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
