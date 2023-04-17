@@ -24,16 +24,13 @@ export class PlayOptionComponent implements OnInit {
     if (this.option !== PlayOption.undefined) {
       const optionNames = Object.values(PlayOption);
       this.iconName = optionNames[this.option] + '-icon';
-      this.classNames =
-        this.baseClassName +
-        ' ' +
-        this.baseClassName +
-        '--' +
-        optionNames[this.option];
+      this.classNames = `${this.baseClassName} ${this.baseClassName}--${
+        optionNames[this.option]
+      }`;
     }
 
     if (this.isBig) {
-      this.classNames += ' ' + this.baseClassName + '--big';
+      this.classNames += ` ${this.baseClassName}--big`;
     }
   }
 

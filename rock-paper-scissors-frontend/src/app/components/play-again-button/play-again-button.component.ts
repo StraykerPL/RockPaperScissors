@@ -18,11 +18,10 @@ export class PlayAgainButtonComponent implements OnInit {
 
   ngOnInit() {
     if (this.gameState !== GameState.undefined) {
-      if (this.gameState === GameState.victory) {
-        this.classNames += ' ' + this.baseClassName + '--victory';
-      } else if (this.gameState === GameState.lose) {
-        this.classNames += ' ' + this.baseClassName + '--lose';
-      }
+      this.classNames +=
+        this.gameState === GameState.victory
+          ? ` ${this.baseClassName}--victory`
+          : ` ${this.baseClassName}--lose`;
     }
   }
 
