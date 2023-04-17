@@ -5,20 +5,20 @@ import { IconRegistryData } from '../consts/IconRegistryData';
 import { IconRegistryObject } from '../models/IconRegistryObject';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class IconRegistryService {
-	constructor(
-		private iconRegistry: MatIconRegistry,
-		private sanitizer: DomSanitizer
-	) {}
+  constructor(
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
+  ) {}
 
-	performRegistration() {
-		IconRegistryData.forEach((element: IconRegistryObject) => {
-			this.iconRegistry.addSvgIcon(
-				element.iconName,
-				this.sanitizer.bypassSecurityTrustResourceUrl(element.iconPath)
-			);
-		});
-	}
+  performRegistration() {
+    IconRegistryData.forEach((element: IconRegistryObject) => {
+      this.iconRegistry.addSvgIcon(
+        element.iconName,
+        this.sanitizer.bypassSecurityTrustResourceUrl(element.iconPath)
+      );
+    });
+  }
 }

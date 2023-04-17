@@ -1,3 +1,3 @@
 export interface ScoreInterface {
-	score: number;
+  score: number;
 }

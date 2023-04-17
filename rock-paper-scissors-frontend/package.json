@@ -6,7 +6,7 @@
     "dev": "ng serve --open --configuration development",
     "dev-build": "ng build --watch --configuration development",
     "prod-build": "ng build --watch --configuration production",
-    "prepare-prettier": "cd .. && husky install rock-paper-scissors-frontend/.husky",
+    "hooks-setup": "cd .. && husky install rock-paper-scissors-frontend/.husky && rm -R rock-paper-scissors-frontend/.husky/_",
     "prettier": "npx prettier --write --ignore-unknown src/"
   },
   "private": true,

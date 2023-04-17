@@ -1,6 +1,6 @@
 export enum PlayOption {
-	undefined,
-	rock,
-	paper,
-	scissors,
+  undefined,
+  rock,
+  paper,
+  scissors,
 }
