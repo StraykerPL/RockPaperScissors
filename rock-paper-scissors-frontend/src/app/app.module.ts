@@ -19,26 +19,26 @@ import { PlayAreaComponent } from './components/play-area/play-area.component';
 import { PlayAgainButtonComponent } from './components/play-again-button/play-again-button.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		RulesButtonComponent,
-		RulesModalComponent,
-		ScoreBoxComponent,
-		HeaderComponent,
-		PlayOptionComponent,
-		PlayAreaComponent,
-		PlayAgainButtonComponent,
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		MatDialogModule,
-		MatIconModule,
-		HttpClientModule,
-		MatButtonModule,
-	],
-	providers: [GameService],
-	bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    RulesButtonComponent,
+    RulesModalComponent,
+    ScoreBoxComponent,
+    HeaderComponent,
+    PlayOptionComponent,
+    PlayAreaComponent,
+    PlayAgainButtonComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatIconModule,
+    HttpClientModule,
+    MatButtonModule,
+  ],
+  providers: [GameService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

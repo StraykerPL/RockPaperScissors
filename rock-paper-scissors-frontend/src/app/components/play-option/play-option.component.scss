@@ -1,57 +1,57 @@
 @use "mixins" as mixins;
 
 .play-option {
-	width: 12.5rem;
-	height: 12.5rem;
-	border-radius: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
-	&--big {
-		transform: scale(1.5);
-	}
+  &--big {
+    transform: scale(1.5);
+  }
 
-	&--rock {
-		@include mixins.outer-circle-border(
-			hsl(349, 71%, 52%),
-			hsl(349, 70%, 56%),
-			hsl(347, 75%, 35%)
-		);
-	}
+  &--rock {
+    @include mixins.outer-circle-border(
+      hsl(349, 71%, 52%),
+      hsl(349, 70%, 56%),
+      hsl(347, 75%, 35%)
+    );
+  }
 
-	&--paper {
-		@include mixins.outer-circle-border(
-			hsl(230, 89%, 62%),
-			hsl(230, 89%, 65%),
-			hsl(229, 65%, 46%)
-		);
-	}
+  &--paper {
+    @include mixins.outer-circle-border(
+      hsl(230, 89%, 62%),
+      hsl(230, 89%, 65%),
+      hsl(229, 65%, 46%)
+    );
+  }
 
-	&--scissors {
-		@include mixins.outer-circle-border(
-			hsl(39, 89%, 49%),
-			hsl(40, 84%, 53%),
-			hsl(28, 76%, 44%)
-		);
-	}
+  &--scissors {
+    @include mixins.outer-circle-border(
+      hsl(39, 89%, 49%),
+      hsl(40, 84%, 53%),
+      hsl(28, 76%, 44%)
+    );
+  }
 
-	&__inner-circle {
-		width: 9.375rem;
-		height: 9.375rem;
-		border-radius: 100%;
-		background-color: white;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		box-shadow: inset 0px 8px 0px 0px hsl(228, 23%, 79%);
+  &__inner-circle {
+    width: 9.375rem;
+    height: 9.375rem;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 8px 0px 0px hsl(228, 23%, 79%);
 
-		&-icon {
-			width: 3.5rem;
-			height: 3.5rem;
-			transform: scale(1.4);
-		}
-	}
+    &-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      transform: scale(1.4);
+    }
+  }
 }

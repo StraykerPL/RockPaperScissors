@@ -1,4 +1,4 @@
 export interface IconRegistryObject {
-	iconName: string;
-	iconPath: string;
+  iconName: string;
+  iconPath: string;
 }

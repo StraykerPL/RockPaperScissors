@@ -1,24 +1,24 @@
 @use "variables";
 
 .score-box {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: white;
-	width: 9.375rem;
-	height: 6.25rem;
-	border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 9.375rem;
+  height: 6.25rem;
+  border-radius: 10px;
 
-	&__title {
-		margin: 0;
-		color: variables.$scoreTextColor;
-		letter-spacing: 2px;
-	}
+  &__title {
+    margin: 0;
+    color: variables.$scoreTextColor;
+    letter-spacing: 2px;
+  }
 
-	&__value {
-		margin: 0;
-		color: variables.$darkTextColor;
-		font-size: 50px;
-	}
+  &__value {
+    margin: 0;
+    color: variables.$darkTextColor;
+    font-size: 50px;
+  }
 }

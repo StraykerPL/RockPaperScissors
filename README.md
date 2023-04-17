@@ -63,7 +63,8 @@ Test Environment - [GitHub Pages](https://straykerpl.github.io/RockPaperScissors
 1. Clone repo on your device, enter repo's folder via CLI,
 2. Enter `rock-paper-scissors-frontend` folder,
 3. Run `npm install` command,
-4. After successful install, run `npm run dev` if you want to start dev build and local server for it, or `npm run prod-build` if you want to deploy app.
+4. After successful install, run `npm run hooks-setup` to make sure, that Husky hooks are working,
+5. Finally, run `npm run dev` if you want to start dev build and local server for it, or `npm run prod-build` if you want to create production build.
 
 ### Process Description
 
