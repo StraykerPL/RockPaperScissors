@@ -1,20 +1,47 @@
-name: Deploy Remote Environment
+name: Deploy Test Environment
+
+env:
+  NODE_VERSION: "18.x"
+
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
-    name: Deploy GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Angular Production Build
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      - name: Setup build environment
+        uses: actions/setup-node@v3
         with:
-          angular_project_dir: ./rock-paper-scissors-frontend
-          angular_dist_build_folder: rock-paper-scissors-frontend/dist/rock-paper-scissors-frontend
-          github_access_token: ${{ secrets.ACCESS_TOKEN }}
-          build_configuration: production
-          base_href: https://straykerpl.github.io/RockPaperScissors/
-          deploy_branch: environment
+          node-version: ${{ env.NODE_VERSION }}
+      - runs: npm ci
+      - runs: npm run prod-build --if-present
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
