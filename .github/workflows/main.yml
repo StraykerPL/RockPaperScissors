@@ -25,8 +25,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - runs: npm ci
-      - runs: npm run prod-build --if-present
+      - run: npm ci
+      - run: npm run prod-build --if-present
 
   deploy:
     environment:
