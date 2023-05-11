@@ -2,9 +2,11 @@ name: Deploy Test Environment
 
 env:
   NODE_VERSION: "18.x"
+  FRONTEND_PATH: "rock-paper-scissors-frontend"
 
 on:
   pull_request:
+    type: [closed]
     branches: develop
   workflow_dispatch:
 
@@ -18,16 +20,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup build environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - runs: npm ci
-      - runs: npm run prod-build --if-present
-
   deploy:
     environment:
       name: github-pages
@@ -36,12 +28,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Build
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: ${{ env.FRONTEND_PATH }}/package-lock.json
+      - run: npm ci --prefix ${{ env.FRONTEND_PATH }}
+      - run: npm run prod-gh-pages-build --prefix ${{ env.FRONTEND_PATH }} --if-present
       - name: Setup Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: '${{ env.FRONTEND_PATH }}/dist/${{ env.FRONTEND_PATH }}'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@main
+        uses: actions/deploy-pages@v2
