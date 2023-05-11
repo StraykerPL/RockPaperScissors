@@ -6,6 +6,7 @@
     "dev": "ng serve --open --configuration development",
     "dev-build": "ng build --configuration development",
     "prod-build": "ng build --configuration production",
+    "prod-gh-pages-build": "ng build --configuration production --base-href /RockPaperScissors/",
     "hooks-setup": "cd .. && husky install rock-paper-scissors-frontend/.husky && rm -R rock-paper-scissors-frontend/.husky/_",
     "prettier": "npx prettier --write --ignore-unknown src/"
   },
