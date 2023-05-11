@@ -6,6 +6,7 @@ env:
 
 on:
   pull_request:
+    type: [closed]
     branches: develop
   workflow_dispatch:
 
