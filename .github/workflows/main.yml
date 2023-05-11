@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '/${{ env.FRONTEND_PATH }}/dist/${{ env.FRONTEND_PATH }}'
+          path: '${{ env.FRONTEND_PATH }}/dist/${{ env.FRONTEND_PATH }}'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
