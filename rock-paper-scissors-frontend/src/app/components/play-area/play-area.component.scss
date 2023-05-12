@@ -1,6 +1,7 @@
 @use "variables";
 
-$backgroundIcon: url("/assets/images/bg-triangle.svg");
+// From https://stackoverflow.com/questions/37923231/how-can-i-use-a-material-design-icon-as-a-css-background-image-value - see ReadMe for explenation.
+$backgroundIcon: url('data:image/svg+xml;utf-8,<svg width="313" height="278" xmlns="http://www.w3.org/2000/svg"><path stroke="%23000" stroke-width="15" fill="none" opacity=".2" d="M156.5 262 300 8H13z"/></svg>');
 
 .play-area {
   display: flex;
