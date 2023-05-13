@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  row-gap: 0.25rem;
   background-color: white;
   width: 9.375rem;
-  height: 6.25rem;
+  height: 6.875rem;
   border-radius: 10px;
 
   &__title {
@@ -19,6 +20,7 @@
   &__value {
     margin: 0;
     color: variables.$darkTextColor;
-    font-size: 50px;
+    font-size: 70px;
+    line-height: 0.8;
   }
 }
