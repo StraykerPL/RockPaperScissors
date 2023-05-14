@@ -1,21 +1,17 @@
 @use "variables";
+@use "mixins";
 
 .header {
+  @include mixins.default-centering;
   width: 37.5rem;
   height: 6.25rem;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 1.25rem;
   border: 2px solid variables.$boxBorderColor;
   border-radius: 15px;
 
   &__logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include mixins.default-centering;
     width: 12.5rem;
     height: 6.25rem;
   }

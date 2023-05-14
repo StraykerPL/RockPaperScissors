@@ -1,13 +1,10 @@
-@use "mixins" as mixins;
+@use "mixins";
 
 .play-option {
+  @include mixins.default-centering;
   width: 12.5rem;
   height: 12.5rem;
   border-radius: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 
   &--big {
     transform: scale(1.5);
@@ -38,14 +35,11 @@
   }
 
   &__inner-circle {
+    @include mixins.default-centering;
     width: 9.375rem;
     height: 9.375rem;
     border-radius: 100%;
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     box-shadow: inset 0px 8px 0px 0px hsl(228, 23%, 79%);
 
     &-icon {

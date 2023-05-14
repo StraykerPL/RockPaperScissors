@@ -1,10 +1,9 @@
 @use "variables";
+@use "mixins";
 
 .score-box {
-  display: flex;
+  @include mixins.default-centering;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   row-gap: 0.25rem;
   background-color: white;
   width: 9.375rem;

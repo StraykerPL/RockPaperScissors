@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins";
 
 // From https://stackoverflow.com/questions/37923231/how-can-i-use-a-material-design-icon-as-a-css-background-image-value - see ReadMe for explenation.
 $backgroundIcon: url('data:image/svg+xml;utf-8,<svg width="313" height="278" xmlns="http://www.w3.org/2000/svg"><path stroke="%23000" stroke-width="15" fill="none" opacity=".2" d="M156.5 262 300 8H13z"/></svg>');
@@ -10,11 +11,8 @@ $backgroundIcon: url('data:image/svg+xml;utf-8,<svg width="313" height="278" xml
   justify-content: center;
 
   &__start {
-    display: flex;
-    flex-direction: row;
+    @include mixins.default-centering;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     column-gap: 5rem;
     row-gap: 2.5rem;
     width: 37.5rem;
