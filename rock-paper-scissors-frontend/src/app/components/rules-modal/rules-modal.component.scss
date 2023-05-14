@@ -1,10 +1,9 @@
 @use "variables";
+@use "mixins";
 
-.rulesdialog {
-  display: flex;
+.rules-dialog {
+  @include mixins.default-centering;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   row-gap: 1.25rem;
 
   &__header {
@@ -20,10 +19,8 @@
     }
 
     &-close-button {
-      display: flex;
+      @include mixins.default-centering;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       border: none;
       background-color: transparent;
 

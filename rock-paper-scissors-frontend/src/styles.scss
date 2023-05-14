@@ -40,14 +40,14 @@ $rock-paper-scissors-frontend-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($rock-paper-scissors-frontend-theme);
 
-html {
+html,
+body {
   height: variables.$pageHeightPercent;
 }
 
 body {
   background-image: variables.$backgroundGradient;
   background-repeat: no-repeat;
-  min-height: variables.$bodyMinHeight;
   font-family: variables.$font;
   font-weight: variables.$defaultFontWeight;
   color: variables.$defaultFontColor;

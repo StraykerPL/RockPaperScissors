@@ -27,8 +27,8 @@ export class PlayAreaComponent implements OnInit {
 
   ngOnInit() {}
 
-  async gameStart(value: PlayOption) {
-    this.playerChoice = value;
+  async gameStart(playerOption: PlayOption) {
+    this.playerChoice = playerOption;
     this.showChoices = true;
 
     await this.gameService.sleep(3000);
