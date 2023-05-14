@@ -64,6 +64,7 @@ Test Environment - [GitHub Pages](https://straykerpl.github.io/RockPaperScissors
 
 ### Built with
 
+- Angular 14 on Node.js v18.12.0,
 - HTML5,
 - Sass (SCSS notation + BEM),
 - TypeScript,
